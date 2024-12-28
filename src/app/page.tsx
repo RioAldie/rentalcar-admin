@@ -53,18 +53,22 @@ export default function Home() {
           maiores non voluptatem natus est ducimus. Aperiam sequi in
           nesciunt? Enim saepe ad sit dignissimos?
         </p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Accusantium labore inventore ab ratione corporis consectetur
-        sed reprehenderit quia iusto a distinctio nostrum, sint
-        nesciunt totam minus hic eaque vitae numquam! Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Ad veritatis
-        similique soluta voluptates minima perferendis debitis
-        voluptatem fuga voluptate nobis sapiente necessitatibus
-        expedita dolore, aliquid nostrum commodi, excepturi, magnam
-        facere? Lorem ipsum dolor sit amet consectetur, adipisicing
-        elit. Eius architecto rem placeat adipisci repudiandae aliquam
-        qui provident magnam ipsum voluptatum commodi sunt harum nihil
-        quisquam dignissimos, doloribus, reprehenderit aperiam illo!
+        <p>
+          {' '}
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Accusantium labore inventore ab ratione corporis consectetur
+          sed reprehenderit quia iusto a distinctio nostrum, sint
+          nesciunt totam minus hic eaque vitae numquam! Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Ad veritatis
+          similique soluta voluptates minima perferendis debitis
+          voluptatem fuga voluptate nobis sapiente necessitatibus
+          expedita dolore, aliquid nostrum commodi, excepturi, magnam
+          facere? Lorem ipsum dolor sit amet consectetur, adipisicing
+          elit. Eius architecto rem placeat adipisci repudiandae
+          aliquam qui provident magnam ipsum voluptatum commodi sunt
+          harum nihil quisquam dignissimos, doloribus, reprehenderit
+          aperiam illo!
+        </p>
       </div>
     </>
   );
