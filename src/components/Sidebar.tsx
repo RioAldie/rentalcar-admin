@@ -13,8 +13,16 @@ import {
   CalendarIcon,
   Link2Icon,
 } from '@radix-ui/react-icons';
+import { getSession, logout } from '@/lib/auth';
+import Logout from './Logout';
+import { redirect } from 'next/navigation';
 
-const Sidebar = () => {
+const Sidebar = async () => {
+  const session = await getSession();
+
+  if (!session.isLoggedIn) {
+    redirect('/signin');
+  }
   return (
     <aside
       id="sidebar-multi-level-sidebar"
@@ -58,7 +66,7 @@ const Sidebar = () => {
               className="hidden py-2 space-y-2">
               <li>
                 <Link
-                  href="/cars"
+                  href="/dashboard/cars"
                   className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                   <DashIcon /> Products
                 </Link>
@@ -96,7 +104,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/booking"
+              href="/dashboard/booking"
               className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <CalendarIcon />
               <span className="flex-1 ms-3 whitespace-nowrap">
@@ -109,7 +117,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/payment"
+              href="/dashboard/payment"
               className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <EnvelopeClosedIcon />
               <span className="flex-1 ms-3 whitespace-nowrap">
@@ -122,7 +130,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/users"
+              href="/dashboard/users"
               className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <AvatarIcon />
               <span className="flex-1 ms-3 whitespace-nowrap">
@@ -132,7 +140,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/cars"
+              href="/dashboard/cars"
               className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <ArchiveIcon />
               <span className="flex-1 ms-3 whitespace-nowrap">
@@ -142,7 +150,7 @@ const Sidebar = () => {
           </li>
           <li>
             <Link
-              href="/bank"
+              href="/dashboard/bank"
               className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
               <IdCardIcon />
               <span className="flex-1 ms-3 whitespace-nowrap">
@@ -151,14 +159,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link
-              href="/logout"
-              className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <ExitIcon />
-              <span className="flex-1 ms-3 whitespace-nowrap">
-                Sign Out
-              </span>
-            </Link>
+            <Logout />
           </li>
         </ul>
       </div>

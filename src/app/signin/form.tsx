@@ -8,33 +8,42 @@ import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { login } from '@/lib/auth';
+import { useState } from 'react';
 
 const formSchema = z.object({
-  username: z.string().min(2).max(50),
-  password: z.string().min(8).max(12),
+  email: z.string().min(8).max(50),
+  password: z.string().min(6).max(12),
 });
 
-export function ProfileForm() {
+export function LoginForm() {
   // ...
+
+  const [state, setState] = useState<any | FormData>(undefined);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: '',
+      email: '',
+      password: '',
     },
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
+
+    const res = await login(values); // Call the login function
+
+    setState(res);
+
+    // Handle successful login (e.g., redirect, show a message, etc.)
   }
   return (
     <Form {...form}>
@@ -43,12 +52,12 @@ export function ProfileForm() {
         className="space-y-4 my-4">
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -61,13 +70,14 @@ export function ProfileForm() {
             <FormItem>
               <FormLabel>Password</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input type="password" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
         <Button type="submit">Submit</Button>
+        {state?.error && <p>{state.error}</p>}
       </form>
     </Form>
   );

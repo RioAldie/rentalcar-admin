@@ -20,3 +20,11 @@ export type Cars = {
   available: boolean;
   createAt: Date;
 };
+
+export type SessionData = {
+  userId?: string;
+  username?: string;
+  email?: string;
+  isLoggedIn: boolean;
+  token?: string;
+};

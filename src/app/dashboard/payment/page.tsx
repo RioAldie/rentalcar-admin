@@ -1,6 +1,6 @@
 import { Payment } from '@/types';
 import { columns } from './columns';
-import { DataTable } from '../../components/ui/data-table';
+import { DataTable } from '../../../components/ui/data-table';
 import { getDataCar, getDataPayment } from '@/api/payment';
 
 // async function getData(): Promise<Payment[]> {
