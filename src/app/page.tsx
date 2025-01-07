@@ -1,10 +1,5 @@
-import Navbar from './components/Navbar';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <main>
-      <Navbar />
-      <h1>ADmin Dashborad</h1>
-    </main>
-  );
+  return redirect('/signin');
 }
