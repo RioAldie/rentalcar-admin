@@ -1,7 +1,7 @@
 import { Payment } from '@/types';
 import { columns } from './columns';
 import { DataTable } from '../../../components/ui/data-table';
-import { getDataCar, getDataPayment } from '@/api/payment';
+import { getDataCar, getDataPayment } from '@/api';
 
 // async function getData(): Promise<Payment[]> {
 //   // Fetch data from your API here.

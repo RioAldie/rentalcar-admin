@@ -7,7 +7,7 @@ import React from 'react';
 
 const Navbar = () => {
   return (
-    <div className="sticky z-30  p-5 rounded-lg  bg-white flex items-center justify-between bg-">
+    <div className="sticky z-30   p-5 rounded-lg  bg-white flex items-center justify-between w-full">
       <div className="text-[var(--textSoft)] p-2 font-bold capitalize">
         Welcome Admin
       </div>

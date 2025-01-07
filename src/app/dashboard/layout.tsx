@@ -21,12 +21,12 @@ export default function DashboardLayout({
 }>) {
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}>
+      className={`${geistSans.variable} ${geistMono.variable} w-screen antialiased  flex`}>
       <div className="flex-[1]">
         <Sidebar />
       </div>
 
-      <div className="flex-[4] p-5">
+      <div className="flex-[4]  p-5 ">
         <Navbar />
         {children}
       </div>

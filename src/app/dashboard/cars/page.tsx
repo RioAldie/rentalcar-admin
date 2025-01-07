@@ -1,4 +1,4 @@
-import { getDataCar } from '@/api/payment';
+import { getDataCar } from '@/api';
 import React from 'react';
 import { columns } from './column';
 import { DataTable } from './data-table';

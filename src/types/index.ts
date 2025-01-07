@@ -20,6 +20,13 @@ export type Cars = {
   available: boolean;
   createAt: Date;
 };
+export type Users = {
+  name?: string;
+  email: string;
+  phone?: string;
+  createdAt: string;
+  id: string;
+};
 
 export type SessionData = {
   userId?: string;
