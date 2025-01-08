@@ -1,9 +1,11 @@
 export type Payment = {
   id: string;
   amount: number;
-  status: 'pending' | 'processing' | 'success' | 'failed';
-  email: string;
-  image: string;
+  status: 'PENDING' | 'SUCCESS' | 'FAILED';
+  transaction_proof: string;
+  bank: string;
+  paymentDate: string;
+  bookingId: string;
 };
 
 export type Cars = {
@@ -19,6 +21,7 @@ export type Cars = {
   location: string;
   available: boolean;
   createAt: Date;
+  id: string;
 };
 export type Users = {
   name?: string;
@@ -26,6 +29,27 @@ export type Users = {
   phone?: string;
   createdAt: string;
   id: string;
+};
+export type Bookings = {
+  id: string;
+  userId: string;
+  carId: string;
+  startDate: string;
+  endDate: string;
+  totalCost: number;
+  status: string;
+  createdAt: string;
+  user: {
+    name: string;
+    phone: string;
+  };
+  car: {
+    name: string;
+    brand: string;
+    model: string;
+    location: string;
+    available: boolean;
+  };
 };
 
 export type SessionData = {

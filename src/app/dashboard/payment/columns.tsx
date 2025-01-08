@@ -12,19 +12,19 @@ export const columns: ColumnDef<Payment>[] = [
     header: 'Status',
   },
   {
-    accessorKey: 'email',
-    header: 'Email',
-  },
-  {
     accessorKey: 'amount',
     header: 'Amount',
   },
   {
-    accessorKey: 'image',
-    header: 'image',
+    accessorKey: 'bank',
+    header: 'Bank',
   },
   {
-    accessorKey: 'car',
-    header: 'car',
+    accessorKey: 'paymentDate',
+    header: 'Date',
+  },
+  {
+    accessorKey: 'transaction_proof',
+    header: 'Proof',
   },
 ];
