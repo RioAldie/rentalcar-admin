@@ -7,9 +7,9 @@ import { redirect } from 'next/navigation';
 const page = async () => {
   const session = await getSession();
 
-  if (session.isLoggedIn) {
-    redirect('/dashboard');
-  }
+  // if (session.isLoggedIn) {
+  //   redirect('/dashboard');
+  // }
   return (
     <main className="mt-20 w-1/3">
       <div>

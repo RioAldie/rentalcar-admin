@@ -6,9 +6,9 @@ import React from 'react';
 const Dashboard = async () => {
   const session = await getSession();
 
-  if (!session.isLoggedIn) {
-    redirect('/signin');
-  }
+  // if (!session.isLoggedIn) {
+  //   redirect('/signin');
+  // }
 
   return (
     <>

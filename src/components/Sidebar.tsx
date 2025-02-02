@@ -18,11 +18,6 @@ import Logout from './Logout';
 import { redirect } from 'next/navigation';
 
 const Sidebar = async () => {
-  const session = await getSession();
-
-  if (!session.isLoggedIn) {
-    redirect('/signin');
-  }
   return (
     <aside
       id="sidebar-multi-level-sidebar"
